@@ -1,0 +1,18 @@
+Option 1:
+To handle the spikes in the requests we can cache the update requests during the surge hours and actually update the DB during the day
+
+Pros:
+it will prevent the slowdowns
+
+Cons:
+the mystats option won't tell the actual stats during those hours
+
+Option 2:
+Seperate the DB to few DB's according to age groups (0-20,20-30,30-50,50-Inf) or cities (depends on the traffic from each city)
+then the burden of handling all the update requests will be divided
+
+Pros:
+the stats are always correct
+
+Cons:
+you will need to maintain more databases and a load balancer
